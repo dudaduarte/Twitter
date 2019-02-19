@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        Twitter
+    </header>
+    <main>
+        <section class='insertText'>
+            <form action="" method="get">
+                <textarea onclick='charCount()' onkeypress='charCount()' name="insert text" onkeyup="enableButton()" id="insert-text" cols="72" rows="5" data-ls-module="charCounter" placeholder='fale o que te aflige'></textarea>
+                <button type='button' class='button' id='buttonId' onclick="getText()" disabled>Enviar</button>
+                <spam id='remainingCharacters'></spam>
+                <!--<input type='submit' value='Enviar' id='buttonId' class='button' />-->
+            </form>
+        </section>
+        <section class='Feed'>
+            <h1 class='titleFeed'>Feed</h1>
+        </section>
+        <section id='feed' class='textFeed'>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
