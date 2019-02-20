@@ -17,12 +17,12 @@
 <body>
 
   <header class='headerClass'>
-      <i class="fab fa-twitter"></i>  Twitter
+    <i class="fas fa-cat"></i>  Something Like Twitter
   </header>
   <main class='main-column'>
     <section class='insertText'>
       <form action="" method="get">
-        <textarea onclick='charCount()' onkeypress='charCount()' name="insert text" onkeyup="enableButton()"
+        <textarea onclick='charCount()' onblur='charCount()' onkeypress='charCount()' name="insert text" onkeyup="enableButton()"
           id="insert-text" cols="72" rows="5" data-ls-module="charCounter"
           placeholder='fale o que te aflige'></textarea>
         <button type='button' class='button' id='buttonId' onclick="getText()" disabled>Enviar</button>
@@ -31,7 +31,7 @@
       </form>
     </section>
     <section class='feed hide'>
-      <h1 class='titleFeed'>Feed</h1>
+      <h1 class='titleFeed'>Feed <i class="fas fa-arrow-circle-down"></i></h1>
     </section>
     <section id='feedId' class='textFeed'>
     </section>
