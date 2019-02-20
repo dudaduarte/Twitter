@@ -7,38 +7,44 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-  <script src="main.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
 
   <header class='headerClass'>
-    <i class="fas fa-cat"></i>  Something Like Twitter
+    <i class="fas fa-cat"></i> Something Like Twitter
   </header>
   <main class='main-column'>
-    <section class='insertText'>
+    <section class='main-sections pad1'>
       <form action="" method="get">
-        <textarea onclick='charCount()' onblur='charCount()' onkeypress='charCount()' name="insert text" onkeyup="enableButton()"
+        <textarea onclick='charCount()' onkeyup='charCount()' name="insert text" onkeyup="enableButton()"
           id="insert-text" cols="72" rows="5" data-ls-module="charCounter"
           placeholder='fale o que te aflige'></textarea>
-        <button type='button' class='button' id='buttonId' onclick="getText()" disabled>Enviar</button>
-        <spam id='remainingCharacters'></spam>
-        <!--<input type='submit' value='Enviar' id='buttonId' class='button' />-->
+        <!-- <button type='button' class='button' id='buttonId' disabled>Enviar</button> -->
+        <section id='buttonAndCounter'>
+          <input disabled type='submit' value='Enviar' id='buttonId' class='button' />
+          <spam id='remainingChar'></spam>
+        </section>
       </form>
     </section>
-    <section class='feed hide'>
-      <h1 class='titleFeed'>Feed <i class="fas fa-arrow-circle-down"></i></h1>
-    </section>
-    <section id='feedId' class='textFeed'>
+    <section class='main-sections pad2'>
+      <div class='feed hide'>
+        <h1 class='titleFeed'>Feed <i class="fas fa-arrow-circle-down"></i></h1>
+      </div>
+      <div id='feedId' class='textFeed'>
+      </div>
     </section>
   </main>
   <footer>
 
   </footer>
+
+  <script src="main.js"></script>
 
 </body>
 

@@ -17,12 +17,18 @@ body {
   padding: 0 15px 0 0;
 }
 
+#buttonAndCounter {
+  display: flex;
+  justify-content: space-between;
+}
+
 #insert-text {
   border-radius: 10px;
   outline: none;
   resize: none;
   font-size: 14px;
   padding: 10px;
+  margin: 0 0 15px;
   width: 37vw;
   height: 5vw;
 }
@@ -41,38 +47,65 @@ body {
 
 main {
   width: 39vw;
-  margin: 0 auto;
 }
 
-.main-column {
+.pad1 {
+  padding: 30px;
+}
+
+.pad2 {
+  padding: 0 30px 30px;
+}
+
+.main-sections {
+  background-color: white;
+  border-radius: 10px;
+  overflow: visible;
+  width: 40vw;
+  margin: 1vw;
+}
+
+/* .main-column {
   overflow: visible;
   background-color: white;
   padding: 30px;
-  height: 100%;
   border-radius: 10px;
-}
+} */
 
 #feedId {
   display: flex;
   flex-direction: column-reverse;
 }
 
+.feed {
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-bottom: 1.5px solid rgba(168, 168, 168, 0.1);
+  border-top: 1.5px solid rgba(168, 168, 168, 0.1);
+  margin: 20px 0;
+}
+
 .titleFeed {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   color: #F19D94;
-  border: none;
-  border-bottom: 1.5px solid rgba(168, 168, 168, 0.1);
-  border-top: 1.5px solid rgba(168, 168, 168, 0.1);
-  padding: 1vw 0;
+}
+
+#remainingChar {
+  padding: 0 15px;
 }
 
 .yellowCounter {
-  color: yellow;
+  color: rgb(247, 210, 0);
 }
 
 .redCounter {
   color: red;
+}
+
+.orangeCounter {
+  color: rgb(255, 153, 0);
 }
 
 .hide {
