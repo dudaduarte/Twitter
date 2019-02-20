@@ -47,7 +47,7 @@ function charCount() {
   if (value >= 0) {
     document.getElementById('remainingCharacters').innerHTML = value;
   } else {
-    document.getElementById('buttonId').disabled = 'disabled';
+    document.getElementById('buttonId').disabled = true;
     document.getElementById('remainingCharacters').innerHTML = value;
   }
 }
