@@ -1,61 +1,82 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: rgb(226, 233, 255);
+  font-family: Helvetica;
+  background-color: rgb(226, 233, 255);
+}
+
+.headerClass {
+  background-color: rgb(119, 150, 252);
+  color: white;
+  padding: 15px 15px 15px 80px;
+  margin: 0 0 20px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
 }
 
 #insert-text {
-    border-radius: 10px;
-    outline:none;
-    resize: none;
-    font-size: 14px;
-    padding: 10px;
-    width: 37vw;
-    height: 5vw;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  padding: 10px;
+  width: 37vw;
+  height: 5vw;
 }
 
 .button {
-    background-color: rgb(155, 13, 67);
-    padding: 10px 23px;
-    border-radius: 10px;
-    border: none;
-    color: white;
+  background-color: rgb(155, 13, 67);
+  padding: 10px 23px;
+  border-radius: 10px;
+  border: none;
+  color: white;
 }
 
 .button:disabled {
-    background-color: rgb(133, 110, 119);
+  background-color: rgb(133, 110, 119);
 }
 
-main {  
-    width: 39vw;
-    margin: 0 auto;
+main {
+  width: 39vw;
+  margin: 0 auto;
 }
 
-#feed {
-    display: flex;
-    flex-direction: column-reverse;
+.main-column {
+  overflow: visible;
+  background-color: white;
+  padding: 30px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+#feedId {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .titleFeed {
-    font-family: ;
-    font-size: 24px;
-    color: rgb(155, 13, 67);
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  color: rgb(155, 13, 67);
+  border: none;
+  border-bottom: 1.5px solid rgba(168, 168, 168, 0.2);
+  padding: 0 0 2vw;
 }
 
 .yellowCounter {
-    color: yellow;
+  color: yellow;
 }
 
 .redCounter {
-    color: red;
+  color: red;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 p {
-    background-color: white;
-    border-radius: 10px;
-    padding: 0.7vw;
-    word-wrap: normal;
+  border: none;
+  border-bottom: 1.5px solid rgba(168, 168, 168, 0.2);
+  padding: 0 0.7vw 2vw;
+  word-wrap: normal;
+  font-size: 16px;
 }
