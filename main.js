@@ -1,5 +1,7 @@
 document.getElementById('buttonId').addEventListener('click', getText);
 document.addEventListener('input', autoResize);
+document.addEventListener('input', charCount);
+document.addEventListener('click', charCount);
 
 
 function getText(event) {
