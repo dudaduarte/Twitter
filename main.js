@@ -1,13 +1,6 @@
 document.getElementById('buttonId').addEventListener('click', getText);
+document.addEventListener('input', autoResize);
 
- document.addEventListener('input', startAutoResize);
-
- function startAutoResize(event) {
-   if (event.target.tagName.toLowerCase() !== 'textarea') {
-     return;
-   }
-   autoResize(document.getElementById('insert-text'));
- }
 
 function getText(event) {
   event.preventDefault();
@@ -16,7 +9,8 @@ function getText(event) {
   document.getElementsByClassName('main-sections')[1].classList.remove('hide');
   postText(userText);
   disableButton();
-  charCountClean()
+  charCountClean();
+  autoResize();
 }
 
 function postText(text) {
@@ -55,15 +49,6 @@ function createHourText() {
   tweetParagraph[tweetParagraph.length-1].appendChild(hourMinutePost);
 }
 
-// function autoResize() {
-//   let textField = document.getElementById('insert-text');
-//   if (textField.scrollHeight > textField.offsetHeight) {
-//     textField.rows += 1;
-//   } else {
-//     textField.rows -= 1;
-//   }
-// }
-
 function hour() {
   let datePost = new Date();
   let hourPost = datePost.getHours();
@@ -80,10 +65,11 @@ function hour() {
   return hourMinutePost;
 }
 
- function autoResize(field) {
-   field.style.height = '5vw';
-   field.style.height = field.scrollHeight + 'px';
- }
+  function autoResize() {
+    field = document.getElementById('insert-text');
+    field.style.height = '4vw';
+    field.style.height = field.scrollHeight + 'px';
+  }
 
 function enableButton() {
   if (!document.getElementById('insert-text').value.match(/\S+/)) {
@@ -107,6 +93,7 @@ function charCount() {
   let current = document.getElementById('insert-text').value.length;
   let value = max - current;
   changeColorCount(value);
+  autoResize()
 }
 
 function changeColorCount(value) {
