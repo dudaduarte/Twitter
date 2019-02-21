@@ -20,24 +20,35 @@
     <i class="fas fa-cat"></i> Something Like Twitter
   </header>
   <main class='main-column'>
-    <section class='main-sections pad1'>
-      <form action="" method="get">
-        <textarea onclick='charCount()' onkeyup='charCount()' name="insert text" onkeyup="enableButton()"
-          id="insert-text" cols="72" rows="5" data-ls-module="charCounter"
-          placeholder='fale o que te aflige'></textarea>
-        <!-- <button type='button' class='button' id='buttonId' disabled>Enviar</button> -->
-        <section id='buttonAndCounter'>
-          <input disabled type='submit' value='Enviar' id='buttonId' class='button' />
-          <spam id='remainingChar'></spam>
-        </section>
-      </form>
+    <section class='profile-section'>
+      <div class='div-profile-pic'></div>
+      <div>
+        <h1 class='profile-name'>Crazy Cat Lady</h1>
+        <h2 class='user'>@crazycatlady</h2>
+        <div class='bio'>
+          Oi eu gosto de gatos e de cheetos sabor requeijão.
+        </div>
+      </div>
     </section>
-    <section class='main-sections pad2'>
-      <div class='feed hide'>
-        <h1 class='titleFeed'>Feed <i class="fas fa-arrow-circle-down"></i></h1>
-      </div>
-      <div id='feedId' class='textFeed'>
-      </div>
+    <section>
+      <section class='main-sections pad1'>
+        <form action="" method="get">
+          <textarea onclick='charCount()' onkeyup='charCount()' name="insert text" onkeyup="enableButton()"
+            id="insert-text" cols="72" data-ls-module="charCounter"
+            placeholder='fale o que te aflige'></textarea>
+          <section id='buttonAndCounter'>
+            <input disabled type='submit' value='Enviar' id='buttonId' class='button' />
+            <spam id='remainingChar'></spam>
+          </section>
+        </form>
+      </section>
+      <section class='main-sections pad2 hide'>
+        <div class='feed'>
+          <h1 class='titleFeed'>Feed <i class="fas fa-arrow-circle-down"></i></h1>
+        </div>
+        <div id='feedId' class='textFeed'>
+        </div>
+      </section>
     </section>
   </main>
   <footer>

@@ -1,20 +1,34 @@
 document.getElementById('buttonId').addEventListener('click', getText);
 
-function getText() {
-  let userText = document.getElementById('insert-text').value;
+ document.addEventListener('input', startAutoResize);
+
+ function startAutoResize(event) {
+   if (event.target.tagName.toLowerCase() !== 'textarea') {
+     return;
+   }
+   autoResize(document.getElementById('insert-text'));
+ }
+
+function getText(event) {
+  event.preventDefault();
+  let userText = document.getElementById('insert-text').value.trim();
   document.getElementById('insert-text').value = '';
-  document.getElementsByClassName('feed')[0].classList.remove('hide');
+  document.getElementsByClassName('main-sections')[1].classList.remove('hide');
   postText(userText);
   disableButton();
   charCountClean()
 }
 
 function postText(text) {
-  let paragraph = document.createElement('p');
+  let paragraph = document.createElement('div');
+  paragraph.className = 'tweetParagraph';
   let tweet = document.createTextNode(text);
+  let hr = document.createElement('hr');
   paragraph.appendChild(tweet);
+  document.getElementById('feedId').appendChild(hr);
   document.getElementById("feedId").appendChild(paragraph);
   createProfileInfo();
+  createHourText();
 }
 
 function createProfileInfo() {
@@ -32,8 +46,47 @@ function createProfileInfo() {
   document.getElementsByClassName('display-flex')[listDisplayFlex.length - 1].appendChild(userDiv);
 }
 
+function createHourText() {
+  let hourMinutePost = document.createElement('div');
+  let hourMinuteText = document.createTextNode(hour());
+  hourMinutePost.className = 'hourMinute';
+  let tweetParagraph = document.getElementsByClassName('tweetParagraph');
+  hourMinutePost.appendChild(hourMinuteText);
+  tweetParagraph[tweetParagraph.length-1].appendChild(hourMinutePost);
+}
+
+// function autoResize() {
+//   let textField = document.getElementById('insert-text');
+//   if (textField.scrollHeight > textField.offsetHeight) {
+//     textField.rows += 1;
+//   } else {
+//     textField.rows -= 1;
+//   }
+// }
+
+function hour() {
+  let datePost = new Date();
+  let hourPost = datePost.getHours();
+  let minutesPost = datePost.getMinutes();
+  let hourString = hourPost.toString();
+  let minutesString = minutesPost.toString();
+  if (minutesString.length < 2) {
+    minutesString = '0' + minutesString;
+  }
+  if (hourString.length < 2) {
+    hourString = '0' + hourString;
+  }
+  let hourMinutePost = hourString + 'h' + minutesString;
+  return hourMinutePost;
+}
+
+ function autoResize(field) {
+   field.style.height = '5vw';
+   field.style.height = field.scrollHeight + 'px';
+ }
+
 function enableButton() {
-  if (document.getElementById('insert-text').value == '') {
+  if (!document.getElementById('insert-text').value.match(/\S+/)) {
     document.getElementById('buttonId').disabled = true;
   } else {
     document.getElementById('buttonId').disabled = false;
