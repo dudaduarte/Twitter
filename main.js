@@ -93,27 +93,23 @@ function charCount() {
   let current = document.getElementById('insert-text').value.length;
   let value = max - current;
   changeColorCount(value);
-  autoResize()
 }
 
 function changeColorCount(value) {
   let counter = document.getElementById('remainingChar');
   if (value >= 0) {
-    counter.classList.remove('redCounter');
+    counter.className = 'blackCounter';
     if (value <= 20 && value > 10) {
-      counter.classList.remove('orangeCounter')
-      counter.classList.add('yellowCounter');
+      counter.className = 'yellowCounter';
     } else if (value <= 10 && value >= 0) {
-      counter.classList.remove('yellowCounter')
-      counter.classList.add('orangeCounter');
+      counter.className = 'orangeCounter';
     } else {
-      counter.classList.remove('yellowCounter');
+      counter.className = 'blackCounter';
     }
     counter.innerHTML = value;
   } else {
     document.getElementById('buttonId').disabled = true;
-    counter.classList.remove('orangeCounter');
-    counter.classList.add('redCounter');
+    counter.className = 'redCounter';
     counter.innerHTML = value;
   }
 }

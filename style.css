@@ -143,6 +143,10 @@ body {
   color: rgb(255, 153, 0);
 }
 
+.blackCounter {
+  color: black;
+}
+
 .hide {
   display: none;
 }
