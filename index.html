@@ -19,14 +19,14 @@
   <header class='headerClass'>
     <i class="fas fa-cat"></i> Something Like Twitter
   </header>
-  <main class='main-column'>
+  <main class='main-column display-flex'>
     <section class='profile-section'>
-      <div class='div-profile-pic'></div>
+      <div class='div-profile-pic profile-pic'></div>
       <div>
         <h1 class='profile-name'>Crazy Cat Lady</h1>
         <h2 class='user'>@crazycatlady</h2>
         <div class='bio'>
-          Oi eu gosto de gatos e de cheetos sabor requeijão.
+          <p>Oi eu gosto de gatos e de cheetos sabor requeijão.</p>
         </div>
       </div>
     </section>
@@ -34,17 +34,17 @@
       <section class='main-sections pad1'>
         <form method="get">
           <textarea onclick='charCount()' onkeyup='charCount()' name="insert text" onkeyup="enableButton()" id='insert-text' cols='72' rows='0' placeholder='fale o que te aflige'></textarea>
-          <section id='buttonAndCounter'>
+          <section id='buttonAndCounter' class='display-flex'>
             <input disabled type='submit' value='Enviar' id='buttonId' class='button' />
             <spam id='remainingChar'></spam>
           </section>
         </form>
       </section>
       <section class='main-sections pad2 hide'>
-        <div class='feed'>
+        <div class='feed display-flex'>
           <h1 class='titleFeed'>Feed <i class="fas fa-arrow-circle-down"></i></h1>
         </div>
-        <div id='feedId' class='textFeed'>
+        <div id='feedId' class='textFeed display-flex'>
         </div>
       </section>
     </section>

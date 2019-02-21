@@ -8,14 +8,14 @@ function getText(event) {
   document.getElementById('insert-text').value = '';
   document.getElementsByClassName('main-sections')[1].classList.remove('hide');
   postText(userText);
-  disableButton();
+  disableEnableButton();
   charCountClean();
   autoResize();
 }
 
 function postText(text) {
   let paragraph = document.createElement('div');
-  paragraph.className = 'tweetParagraph';
+  paragraph.className = 'tweetParagraph display-flex';
   let tweet = document.createTextNode(text);
   let hr = document.createElement('hr');
   paragraph.appendChild(tweet);
@@ -27,17 +27,17 @@ function postText(text) {
 
 function createProfileInfo() {
   let sectionUser = document.createElement('section');
-  sectionUser.className = 'display-flex';
+  sectionUser.className = 'class-profile display-flex';
   let profilePic = document.createElement('div');
-  profilePic.className = 'profile-pic';
+  profilePic.className = 'profile-pic pic-tweets';
   let userDiv = document.createElement('div');
   userDiv.className = 'div-user';
   let userName = document.createTextNode('@crazycatlady:');
-  let listDisplayFlex = document.getElementsByClassName('display-flex');
+  let listDisplayFlex = document.getElementsByClassName('class-profile');
   userDiv.appendChild(userName);
   document.getElementById('feedId').appendChild(sectionUser);
-  document.getElementsByClassName('display-flex')[listDisplayFlex.length - 1].appendChild(profilePic);
-  document.getElementsByClassName('display-flex')[listDisplayFlex.length - 1].appendChild(userDiv);
+  document.getElementsByClassName('class-profile')[listDisplayFlex.length - 1].appendChild(profilePic);
+  document.getElementsByClassName('class-profile')[listDisplayFlex.length - 1].appendChild(userDiv);
 }
 
 function createHourText() {
@@ -46,7 +46,7 @@ function createHourText() {
   hourMinutePost.className = 'hourMinute';
   let tweetParagraph = document.getElementsByClassName('tweetParagraph');
   hourMinutePost.appendChild(hourMinuteText);
-  tweetParagraph[tweetParagraph.length-1].appendChild(hourMinutePost);
+  tweetParagraph[tweetParagraph.length - 1].appendChild(hourMinutePost);
 }
 
 function hour() {
@@ -65,22 +65,18 @@ function hour() {
   return hourMinutePost;
 }
 
-  function autoResize() {
-    field = document.getElementById('insert-text');
-    field.style.height = '4vw';
-    field.style.height = field.scrollHeight + 'px';
-  }
-
-function enableButton() {
-  if (!document.getElementById('insert-text').value.match(/\S+/)) {
-    document.getElementById('buttonId').disabled = true;
-  } else {
-    document.getElementById('buttonId').disabled = false;
-  }
+function autoResize() {
+  field = document.getElementById('insert-text');
+  field.style.height = '4vw';
+  field.style.height = field.scrollHeight + 'px';
 }
 
-function disableButton() {
-  document.getElementById('buttonId').disabled = true;
+function disableEnableButton() {
+  if (document.getElementById('insert-text').value.match(/\S+/)) {
+    document.getElementById('buttonId').disabled = false;
+  } else {
+    document.getElementById('buttonId').disabled = true;
+  }
 }
 
 function charCountClean() {
@@ -88,7 +84,7 @@ function charCountClean() {
 }
 
 function charCount() {
-  enableButton();
+  disableEnableButton();
   let max = 140;
   let current = document.getElementById('insert-text').value.length;
   let value = max - current;
